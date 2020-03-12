@@ -9,6 +9,8 @@ Start and end dates must be specified as comma separated list at lines 43-44 of 
 
 HFR networks to be processed must be specified as comma separated list at line 50 of the EU_HFR_Node_TA_REP_dataset_builder.m wrapper.
 
+The monthly aggregation selection must be specified at line 47 of the EU_HFR_Node_TA_REP_dataset_builder.m wrapper.
+
 
 THE INPUT DATA TO BE PROCESSED MUST BE PLACED IN A FOLDER NAMED WITH THE NETWORK ID OF THE HFR NETWORK AT THE SAME LEVEL OF THE FOLDER CONTAINING THE APPLICATION (I.E. A FOLDER ROOTWARD WITH RESPECT TO THE SCRIPT FILES). THE NETWORK-ID-NAMED FOLDER MUST HAVE THE FOLLOWING STRUCTURE:
 
