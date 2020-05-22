@@ -40,14 +40,14 @@ try
     %% Set HFR networks to be processed and temporal aggregation interval
     
     % START AND END DATES TO BE INSERTED IN THE FORMAT YYYY-MM-DD AS COMMA-SEPARATED LIST
-    procStart = '2020-01-01, 2019-01-01, 2020-01-01, 2020-01-01'; % Start date included
-    procEnd = '2020-01-05, 2019-03-31, 2020-02-05, 2020-02-15'; % End date included
+    procStart = '2020-05-10'; % Start date included
+    procEnd = '2020-05-20'; % End date included
     
     % Monthly aggregation flag. 0 = AGGREGATION ON THE WHOLE PERIOD -- 1 = MONTHLY AGGREGATION
     monthlyAggregation = 0;
     
     % NETWORK IDS TO BE INSERTED AS COMMA-SEPARATED LIST
-    HFRnetworkID = 'HFR-TirLig, HFR-Galicia, HFR-TirLig, HFR-COSYNA';
+    HFRnetworkID = 'HFR-COSYNA';
     
     %%
     

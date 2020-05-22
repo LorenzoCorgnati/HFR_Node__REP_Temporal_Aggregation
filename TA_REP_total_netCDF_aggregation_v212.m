@@ -125,10 +125,10 @@ try
             nc.nsct(:,:,:,file_idx) = ncread(fileList(file_idx).name,'NSCT');
             nc.ewcs(:,:,:,file_idx) = ncread(fileList(file_idx).name,'EWCS');
             nc.nscs(:,:,:,file_idx) = ncread(fileList(file_idx).name,'NSCS');
-            if(strcmp(sensorATT,'WERA'))
+            if(contains(sensorATT,'wera','IgnoreCase',true))
                 nc.uacc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'UACC');
                 nc.vacc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'VACC');
-            elseif(strcmp(sensorATT,'CODAR SeaSonde'))
+            elseif(contains(sensorATT,'codar','IgnoreCase',true))
                 nc.ccov(:,:,:,file_idx) = ncread(fileList(file_idx).name,'CCOV');
             end
             nc.gdop(:,:,:,file_idx) = ncread(fileList(file_idx).name,'GDOP');
@@ -178,10 +178,10 @@ try
         ncwrite(aggrFilename,'NSCT',nc.nsct);
         ncwrite(aggrFilename,'EWCS',nc.ewcs);
         ncwrite(aggrFilename,'NSCS',nc.nscs);
-        if(strcmp(sensorATT,'WERA'))
+        if(contains(sensorATT,'wera','IgnoreCase',true))
             ncwrite(aggrFilename,'UACC',nc.uacc);
             ncwrite(aggrFilename,'VACC',nc.vacc);
-        elseif(strcmp(sensorATT,'CODAR SeaSonde'))
+        elseif(contains(sensorATT,'codar','IgnoreCase',true))
             ncwrite(aggrFilename,'CCOV',nc.ccov);
         end
         ncwrite(aggrFilename,'GDOP',nc.gdop);

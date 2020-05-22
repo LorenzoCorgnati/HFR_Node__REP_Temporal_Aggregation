@@ -107,13 +107,15 @@ try
             
             if(file_idx ==1)
                 % Coordinate variables
-                nc.bear = ncread(fileList(file_idx).name,'BEAR');
-                nc.rnge = ncread(fileList(file_idx).name,'RNGE');
+                if(contains(sensorATT,'codar','IgnoreCase',true))
+                    nc.bear = ncread(fileList(file_idx).name,'BEAR');
+                    nc.rnge = ncread(fileList(file_idx).name,'RNGE');
+                end
                 nc.latitude = ncread(fileList(file_idx).name,'LATITUDE');
                 nc.longitude = ncread(fileList(file_idx).name,'LONGITUDE');
                 nc.deph = ncread(fileList(file_idx).name,'DEPH');
                 nc.crs = ncread(fileList(file_idx).name,'crs');
-                if(strcmp(sensorATT,'CODAR SeaSonde'))
+                if(contains(sensorATT,'codar','IgnoreCase',true))
                     nc.xdst = ncread(fileList(file_idx).name,'XDST');
                     nc.ydst = ncread(fileList(file_idx).name,'YDST');
                 end
@@ -132,10 +134,10 @@ try
             nc.drva(:,:,:,file_idx) = ncread(fileList(file_idx).name,'DRVA');
             nc.ewct(:,:,:,file_idx) = ncread(fileList(file_idx).name,'EWCT');
             nc.nsct(:,:,:,file_idx) = ncread(fileList(file_idx).name,'NSCT');
-            if(strcmp(sensorATT,'WERA'))
+            if(contains(sensorATT,'wera','IgnoreCase',true))
                 nc.hcss(:,:,:,file_idx) = ncread(fileList(file_idx).name,'HCSS');
                 nc.eacc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'EACC');
-            elseif(strcmp(sensorATT,'CODAR SeaSonde'))
+            elseif(contains(sensorATT,'codar','IgnoreCase',true))
                 nc.espc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'ESPC');
                 nc.etmp(:,:,:,file_idx) = ncread(fileList(file_idx).name,'ETMP');
                 nc.maxv(:,:,:,file_idx) = ncread(fileList(file_idx).name,'MAXV');
@@ -174,8 +176,10 @@ try
         ncwrite(aggrFilename,'TIME',nc.time);
         
         % Coordinate variables
-        ncwrite(aggrFilename,'BEAR',nc.bear);
-        ncwrite(aggrFilename,'RNGE',nc.rnge);
+        if(contains(sensorATT,'codar','IgnoreCase',true))
+            ncwrite(aggrFilename,'BEAR',nc.bear);
+            ncwrite(aggrFilename,'RNGE',nc.rnge);
+        end
         ncwrite(aggrFilename,'LATITUDE',nc.latitude);
         ncwrite(aggrFilename,'LONGITUDE',nc.longitude);
         ncwrite(aggrFilename,'DEPH',nc.deph);
