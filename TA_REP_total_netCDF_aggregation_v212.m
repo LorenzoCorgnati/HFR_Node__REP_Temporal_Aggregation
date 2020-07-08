@@ -208,6 +208,9 @@ try
         
         %% Modify some attributes
         
+        % Data mode
+        ncwriteatt(aggrFilename,'/','data_mode',char('D'));
+        
         % File creation datetime
         dateCreated = [datestr(now, 'yyyy-mm-dd') 'T' datestr(now, 'HH:MM:SS') 'Z'];
         ncwriteatt(aggrFilename,'/','date_created',char(dateCreated));
