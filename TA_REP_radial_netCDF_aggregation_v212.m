@@ -73,7 +73,8 @@ try
         else
             time_str = sprintf('%.4d%.2d%.2d_%.4d%.2d%.2d',startVec(1),startVec(2),startVec(3),endVec(1),endVec(2),endVec(3));
         end
-        aggrFilename = [RADaggrFolder filesep 'RV_HF_Aggregated_' networkID '-' radSite '_' time_str '.nc'];
+%         aggrFilename = [RADaggrFolder filesep 'RV_HF_Aggregated_' networkID '-' radSite '_' time_str '.nc'];
+        aggrFilename = [RADaggrFolder filesep 'RV_HF_' networkID '-' radSite '.nc'];
         
         % Get schema of the netCDF files to be aggregated
         HFRnetcdfRadSchema = ncinfo(fileList(end).name);

@@ -72,7 +72,8 @@ try
         else
             time_str = sprintf('%.4d%.2d%.2d_%.4d%.2d%.2d',startVec(1),startVec(2),startVec(3),endVec(1),endVec(2),endVec(3));
         end
-        aggrFilename = [TOTaggrFolder filesep 'TV_HF_Aggregated_' networkID '-Total_' time_str '.nc'];
+%         aggrFilename = [TOTaggrFolder filesep 'TV_HF_Aggregated_' networkID '-Total_' time_str '.nc'];
+        aggrFilename = [TOTaggrFolder filesep 'GL_TV_HF_' networkID '-Total.nc'];
         
         % Get schema of the netCDF files to be aggregated
         HFRnetcdfTotSchema = ncinfo(fileList(end).name);
