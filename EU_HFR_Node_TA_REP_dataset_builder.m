@@ -33,21 +33,21 @@ disp(['[' datestr(now) '] - - ' 'EU_HFR_Node_TA_REP_dataset_builder started.']);
 try
     
     %% Set data format version
-    vers = 'v2.1.2';
+    vers = 'v2.2';
     
     %%
     
     %% Set HFR networks to be processed and temporal aggregation interval
     
     % START AND END DATES TO BE INSERTED IN THE FORMAT YYYY-MM-DD AS COMMA-SEPARATED LIST
-    procStart = '2020-01-10'; % Start date included
-    procEnd = '2020-01-20'; % End date included
+    procStart = '2015-06-01, 2020-10-01, 2020-10-01'; % Start date included
+    procEnd = '2015-08-31, 2020-12-31, 2020-12-31'; % End date included
     
     % Monthly aggregation flag. 0 = AGGREGATION ON THE WHOLE PERIOD -- 1 = MONTHLY AGGREGATION
     monthlyAggregation = 0;
     
     % NETWORK IDS TO BE INSERTED AS COMMA-SEPARATED LIST
-    HFRnetworkID = 'HFR-Ibiza';
+    HFRnetworkID = 'HFR-Galicia, HFR-COSYNA, HFR-TirLig';
     
     %%
     

@@ -47,7 +47,7 @@ try
                 curVec = datevec(cur);
                 if(curVec(2) ~= curMonth)
                     % Run the aggregation
-                    [REPT_err] = TA_REP_total_netCDF_aggregation_v212(HFRPnetworks{net_idx},vers,folderList,nextStart,cur-1,monthlyAggregation);
+                    [REPT_err] = TA_REP_total_netCDF_aggregation(HFRPnetworks{net_idx},vers,folderList,nextStart,cur-1,monthlyAggregation);
                     clear folderList
                     day_idx = 1;
                     curMonth = curVec(2); % update current month
@@ -61,7 +61,7 @@ try
         end
         
         % Run the aggregation
-        [REPT_err] = TA_REP_total_netCDF_aggregation_v212(HFRPnetworks{net_idx},vers,folderList,nextStart,cur-1,monthlyAggregation);
+        [REPT_err] = TA_REP_total_netCDF_aggregation(HFRPnetworks{net_idx},vers,folderList,nextStart,cur-1,monthlyAggregation);
         
     end
     
