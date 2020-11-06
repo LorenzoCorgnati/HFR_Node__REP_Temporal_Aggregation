@@ -89,6 +89,9 @@ try
             end
         end
         
+        % Delete the eventually present netCDF file with the same name
+        delete(aggrFilename);
+        
         % Create the aggregated netCDF file with the modified schema
         ncwriteschema(aggrFilename,HFRnetcdfRadSchema);
         
