@@ -129,7 +129,7 @@ try
             if(contains(sensorATT,'wera','IgnoreCase',true))
                 nc.uacc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'UACC');
                 nc.vacc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'VACC');
-            elseif(contains(sensorATT,'codar','IgnoreCase',true))
+            elseif((contains(sensorATT,'codar','IgnoreCase',true)) && (~contains(networkID,'HFR-US')))
                 nc.ccov(:,:,:,file_idx) = ncread(fileList(file_idx).name,'CCOV');
             end
             nc.gdop(:,:,:,file_idx) = ncread(fileList(file_idx).name,'GDOP');
@@ -182,7 +182,7 @@ try
         if(contains(sensorATT,'wera','IgnoreCase',true))
             ncwrite(aggrFilename,'UACC',nc.uacc);
             ncwrite(aggrFilename,'VACC',nc.vacc);
-        elseif(contains(sensorATT,'codar','IgnoreCase',true))
+        elseif((contains(sensorATT,'codar','IgnoreCase',true)) && (~contains(networkID,'HFR-US')))
             ncwrite(aggrFilename,'CCOV',nc.ccov);
         end
         ncwrite(aggrFilename,'GDOP',nc.gdop);
