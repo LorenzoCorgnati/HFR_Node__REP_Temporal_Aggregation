@@ -129,7 +129,7 @@ try
             nc.nsct(:,:,:,file_idx) = ncread(fileList(file_idx).name,'NSCT');
             nc.ewcs(:,:,:,file_idx) = ncread(fileList(file_idx).name,'EWCS');
             nc.nscs(:,:,:,file_idx) = ncread(fileList(file_idx).name,'NSCS');
-            if(contains(sensorATT,'wera','IgnoreCase',true))
+            if((contains(sensorATT,'wera','IgnoreCase',true)) && (~contains(networkID,'HFR-US')))
                 nc.uacc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'UACC');
                 nc.vacc(:,:,:,file_idx) = ncread(fileList(file_idx).name,'VACC');
             elseif((contains(sensorATT,'codar','IgnoreCase',true)) && (~contains(networkID,'HFR-US')))
