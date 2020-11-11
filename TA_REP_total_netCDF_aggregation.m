@@ -182,7 +182,7 @@ try
         ncwrite(aggrFilename,'NSCT',nc.nsct);
         ncwrite(aggrFilename,'EWCS',nc.ewcs);
         ncwrite(aggrFilename,'NSCS',nc.nscs);
-        if(contains(sensorATT,'wera','IgnoreCase',true))
+        if((contains(sensorATT,'wera','IgnoreCase',true)) && (~contains(networkID,'HFR-US')))
             ncwrite(aggrFilename,'UACC',nc.uacc);
             ncwrite(aggrFilename,'VACC',nc.vacc);
         elseif((contains(sensorATT,'codar','IgnoreCase',true)) && (~contains(networkID,'HFR-US')))
