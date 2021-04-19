@@ -102,6 +102,7 @@ try
         timeref = datenum(1950,1,1);  % days since 1950-01-01T00:00:00Z
         
         for file_idx=1:length(fileList)
+            
             % Retrieve manufacturer info
             sensorATT = ncreadatt(fileList(file_idx).name,'/','sensor');
             
@@ -295,4 +296,3 @@ else
 end
 
 return
-
