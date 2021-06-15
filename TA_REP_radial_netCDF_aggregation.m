@@ -89,6 +89,15 @@ try
             end
         end
         
+        % Modify the data_mode attribute for all variables
+        for var_idx=1:length(HFRnetcdfRadSchema.Variables)
+            for attr_idx=1:length(HFRnetcdfRadSchema.Variables(var_idx).Attributes)
+                if(strcmp(HFRnetcdfRadSchema.Variables(var_idx).Attributes(attr_idx).Name,'data_mode'))
+                    HFRnetcdfRadSchema.Variables(var_idx).Attributes(attr_idx).Value = char('D');
+                end
+            end
+        end
+        
         % Delete the eventually present netCDF file with the same name
         delete(aggrFilename);
         
