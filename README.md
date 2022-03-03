@@ -47,6 +47,10 @@ The required toolboxes are:
 - Nctoolbox-1.1.3 (https://github.com/nctoolbox/nctoolbox); 
 - Rdir (http://www.mathworks.com/matlabcentral/fileexchange/19550-recursive-directory-listing);
 
+Cite as:
+Lorenzo Corgnati. (2020). EU_HFR_NODE_REP_Temporal_Aggregation. Zenodo. https://doi.org/10.5281/zenodo.3707649
+
+
 
 Author: Lorenzo Corgnati
 
